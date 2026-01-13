@@ -7,9 +7,9 @@
 // 2) 用一个单位矩形(0..1) + translate/size，在 WebGL 里画到指定像素位置
 // 3) 通过“竖向缩放”让眼睛眨动；眉毛/下眼皮跟着一起动
 
-const BASE_IMAGE_URL = "./shared-0-sheet1.png";
-const ATLAS_IMAGE_URL = "./shared-0-sheet3.png";
-const COWLICK_IMAGE_URL = "./shared-0-sheet5.png";
+const BASE_IMAGE_URL = "/images/shared-0-sheet1.png";
+const ATLAS_IMAGE_URL = "/images/shared-0-sheet3.png";
+const COWLICK_IMAGE_URL = "/images/shared-0-sheet5.png";
 
 // 画布上方留白：避免头顶元素（呆毛）甩动时被裁切
 const STAGE_PADDING_TOP_PX = 100;

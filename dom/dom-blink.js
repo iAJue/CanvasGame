@@ -3,9 +3,9 @@
 // - “底图坐标系”：以 shared-0-sheet1.png 左上角为 (0,0)，x 向右，y 向下
 // - 为了让头顶呆毛甩动不被裁切，会在舞台上方加留白（stagePaddingTop），底图整体下移
 
-const BASE_IMAGE_URL = "../canvas/shared-0-sheet1.png";
-const ATLAS_IMAGE_URL = "../canvas/shared-0-sheet3.png";
-const COWLICK_IMAGE_URL = "../canvas/shared-0-sheet5.png";
+const BASE_IMAGE_URL = "/images/shared-0-sheet1.png";
+const ATLAS_IMAGE_URL = "/images/shared-0-sheet3.png";
+const COWLICK_IMAGE_URL = "/images/shared-0-sheet5.png";
 
 // 画布上方留白：避免头顶元素（呆毛）甩动时被裁切
 const STAGE_PADDING_TOP_PX = 140;

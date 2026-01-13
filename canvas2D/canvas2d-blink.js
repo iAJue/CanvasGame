@@ -1,8 +1,8 @@
 ﻿// Canvas 2D 版本：不使用 WebGL，全部用 drawImage + transform 实现叠加与动画。
 
-const BASE_IMAGE_URL = "../canvas/shared-0-sheet1.png";
-const ATLAS_IMAGE_URL = "../canvas/shared-0-sheet3.png";
-const COWLICK_IMAGE_URL = "../canvas/shared-0-sheet5.png";
+const BASE_IMAGE_URL = "/images/shared-0-sheet1.png";
+const ATLAS_IMAGE_URL = "/images/shared-0-sheet3.png";
+const COWLICK_IMAGE_URL = "/images/shared-0-sheet5.png";
 
 // 画布上方留白：避免头顶元素（呆毛）甩动时被裁切
 const STAGE_PADDING_TOP_PX = 100;
