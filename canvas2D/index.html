@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>WebGL 眨眼 Demo</title>
+    <title>Canvas 2D 眨眼 Demo</title>
     <style>
       :root {
         color-scheme: light dark;
@@ -107,11 +107,11 @@
   <body>
     <div class="wrap">
       <div class="stage">
-        <canvas id="gl" width="519" height="765" aria-label="WebGL canvas"></canvas>
+        <canvas id="c2d" aria-label="Canvas 2D"></canvas>
       </div>
       <div class="panel">
-        <h1>眨眼参数</h1>
-        <p>默认位置是“差不多”的，需要你按人脸实际位置微调。拖动滑条即可。</p>
+        <h1>眨眼参数（Canvas 2D）</h1>
+        <p>用滑条调眼睛位置/缩放；其他元素跟随眼睛锚点。空格键可立刻眨一次。</p>
 
         <div class="row">
           <label for="scale">眼睛缩放</label>
@@ -155,7 +155,7 @@
       </div>
     </div>
 
-    <script type="module" src="/canvas/webgl-blink.js"></script>
+    <script type="module" src="/canvas2d/canvas2d-blink.js"></script>
   </body>
 </html>
 
