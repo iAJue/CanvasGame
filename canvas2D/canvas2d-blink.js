@@ -302,8 +302,8 @@ async function main() {
       openFactor,
     );
 
-    // 下眼皮：眨眼时略微上抬
-    const lidRise = smoothstep01(blinkAmt) * (4 * s);
+    // 下眼皮：眨眼时略微下抬
+    const lidRise = smoothstep01(blinkAmt) * (-4 * s);
     const leftLidX = leftAnchor.x + off.leftLowerLid.x * s;
     const leftLidY = leftAnchor.y + off.leftLowerLid.y * s - lidRise;
     drawSprite(
