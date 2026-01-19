@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>内容分级提示</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg0: #070a12;
+        --bg1: #0f1630;
+        --card: rgba(18, 24, 52, 0.75);
+        --border: rgba(255, 255, 255, 0.12);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.7);
+        --danger: #ff4d6d;
+        --ok: #2dd4bf;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        background: radial-gradient(1200px 600px at 20% 10%, #1b2b63 0%, transparent 60%),
+          radial-gradient(900px 500px at 80% 30%, #4a174f 0%, transparent 55%),
+          linear-gradient(180deg, var(--bg1), var(--bg0));
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .card {
+        width: min(720px, 100%);
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 22px 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(0, 0, 0, 0.25);
+        font-weight: 700;
+        letter-spacing: 0.4px;
+      }
+
+      .badge .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: var(--danger);
+        box-shadow: 0 0 0 4px rgba(255, 77, 109, 0.15);
+      }
+
+      h1 {
+        margin: 14px 0 8px;
+        font-size: 24px;
+        line-height: 1.2;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .rules {
+        margin-top: 14px;
+        padding: 14px 14px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(0, 0, 0, 0.25);
+      }
+
+      .rules ul {
+        margin: 8px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+
+      .btn {
+        appearance: none;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--text);
+        padding: 12px 14px;
+        border-radius: 14px;
+        cursor: pointer;
+        font-weight: 700;
+        transition: transform 120ms ease, background 120ms ease,
+          border-color 120ms ease;
+        flex: 1 1 220px;
+        min-width: 220px;
+      }
+
+      .btn:focus-visible {
+        outline: 3px solid rgba(45, 212, 191, 0.45);
+        outline-offset: 2px;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .btn.no {
+        border-color: rgba(255, 77, 109, 0.35);
+      }
+
+      .btn.no:hover {
+        background: rgba(255, 77, 109, 0.12);
+      }
+
+      .btn.yes {
+        border-color: rgba(45, 212, 191, 0.35);
+      }
+
+      .btn.yes:hover {
+        background: rgba(45, 212, 191, 0.12);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card" role="dialog" aria-modal="true" aria-labelledby="title">
+      <div class="badge" aria-label="18+ 内容分级提示">
+        <span class="dot" aria-hidden="true"></span>
+        18+ 提醒
+      </div>
+      <h1 id="title">🔞本内容仅适合 18 岁及以上用户</h1>
+      <p>
+        该游戏包含成人向内容（18+）。如果你未满 18 岁或不愿意继续，请选择“否”。
+      </p>
+
+      <section class="rules" aria-label="提示">
+        <p>继续前请确认：</p>
+        <ul>
+          <li>你已年满 18 周岁；</li>
+          <li>你自愿进入并承担相应责任；</li>
+          <li>不适内容请立刻退出。</li>
+        </ul>
+      </section>
+
+      <div class="actions">
+        <button id="btnNo" class="btn no" type="button">否</button>
+        <button id="btnYes" class="btn yes" type="button">是，我已满 18 岁</button>
+      </div>
+    </main>
+
+    <script>
+      (function () {
+        const normalUrl = "canvas/index.html";
+        const adultUrl = "undressing/index.html";
+
+        const btnNo = document.getElementById("btnNo");
+        const btnYes = document.getElementById("btnYes");
+
+        function go(url) {
+          window.location.href = url;
+        }
+
+        btnNo.addEventListener("click", () => go(normalUrl));
+        btnYes.addEventListener("click", () => go(adultUrl));
+
+        btnNo.focus();
+      })();
+    </script>
+  </body>
+</html>
